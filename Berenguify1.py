@@ -13,6 +13,7 @@ try:
     print()
     
     if opcio==1:
+        #Marc: Responsable de la validació d'alta de cançons
         print("                         ♬ :;;;:♬  Cançó 1 ♬ :;;;:♬")
         canco=input("*★ *――――*★ *Introdueix el nombre de la cançó*★ *――――*★ *: ")
         autor=input("*★ *――――*★ *Introdueix l'autor de la cançó*★ *――――*★ *: ")
