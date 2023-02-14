@@ -89,7 +89,8 @@ try:
    
     elif opcio==2:
         print("                                ✦ Usuari 1✦")
-        nomcomplet=input("⇉ Escriu el teu nom i llinatge: ")   
+        nomcomplet=input("⇉ Escriu el teu nom i llinatge: ")
+        #LLuís: encarregat de fer la data de naixement   
         datanaixement=input("⇉ Escriu la teva data de naixement: ")
         expresiodata = "^[0-9]{2}/[0-9]{2}/[0-9]{4}$"
         comprobacio = re.search(expresiodata, datanaixement)
