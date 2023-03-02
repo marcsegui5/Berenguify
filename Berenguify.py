@@ -1,4 +1,47 @@
 
+import re
+opcio=1
+while opcio >=1 and opcio <5:
+    print("                    ⸻    ♫ Benvinguts a BERENGUIFY!!!♫ ⸻")
+    print()
+    print("                        ☻ _MENÚ_☻")
+    print()
+    print("Opció 1: Afegir una cançó:")
+    print("Opció 2: Registrar un usuari:")
+    print("Opció 3: Veure cançons disponibles:")
+    print("Opció 4: Veure usuaris del sistema:")
+    print("Opció 5: Sortir del programa:")
+    try:
+        opcio=int(input("introdueix una opció de l'1 al 5: "))
+        print()
+    
+        if opcio==1:
+            #Marc: Responsable de la validació d'alta de cançons
+            print("                         ♬ :;;;:♬  Cançó 1 ♬ :;;;:♬")
+            canco=input("*★ *――――*★ *Introdueix el nombre de la cançó*★ *――――*★ *: ")
+            autor=input("*★ *――――*★ *Introdueix l'autor de la cançó*★ *――――*★ *: ")
+            anyllancament=input("*★ *――――*★ *Introduiex l'any de llancament de la cançó*★ *――――*★ *: ")
+            expresion = "^[0-9]{4}$"
+            comprobacio = re.search(expresion, anyllancament)
+            if comprobacio:
+                print("es correcte")
+            else:
+                print("es incorrecte")
+                anyllancament=input("*★ *――――*★ *Introduiex l'any de llancament de la cançó*★ *――――*★ *: ")
+                comprobacio = re.search(expresion, anyllancament)
+                if comprobacio:
+                    print("Es correcte")
+                else:
+                    print("Ja has fet els 2 intents")
+                    sys.exit()
+            estil=input("*★ *――――*★ *Introdueix l'estil de la cançó*★ *――――*★ *: ")
+
+            url = input("Introdueix l'enllac1: ")
+            expresion = "^https://"
+            comprobacio = re.search(expresion, url)
+            if comprobacio:
+                print("es correcte")
+            else:
                 print("es incorrecte")
                 url1 = input("Introdueix l'enllac2: ")
                 comprobacio = re.search(expresion, url1)
