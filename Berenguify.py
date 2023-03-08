@@ -1,92 +1,69 @@
 
 import re
 opcio=1
-while opcio >=1 and opcio <5:
+cancons = []
+usuaris = []
+canco_nova = ['', '', '', '', '']
+usuari_nou = ['', '', '', '']
+while True:
     print("                    ⸻    ♫ Benvinguts a BERENGUIFY!!!♫ ⸻")
     print()
-    print("                        ☻ _MENÚ_☻")
+    print("                        ☻ _MENU_☻")
     print()
-    print("Opció 1: Afegir una cançó:")
-    print("Opció 2: Registrar un usuari:")
-    print("Opció 3: Veure cançons disponibles:")
-    print("Opció 4: Veure usuaris del sistema:")
-    print("Opció 5: Sortir del programa:")
+    print("Opcio 1: Afegir una canco:")
+    print("Opcio 2: Registrar un usuari:")
+    print("Opcio 3: Veure cançons disponibles:")
+    print("Opcio 4: Veure usuaris del sistema:")
+    print("Opcio 5: Sortir del programa:")
     try:
-        opcio=int(input("introdueix una opció de l'1 al 5: "))
-        print()
-    
+        opcio=int(input("introdueix una opcio de l'1 al 5: "))
+        print() 
+        
         if opcio==1:
-            #Marc: Responsable de la validació d'alta de cançons
-            print("                         ♬ :;;;:♬  Cançó 1 ♬ :;;;:♬")
-            canco=input("*★ *――――*★ *Introdueix el nombre de la cançó*★ *――――*★ *: ")
-            autor=input("*★ *――――*★ *Introdueix l'autor de la cançó*★ *――――*★ *: ")
-            anyllancament=input("*★ *――――*★ *Introduiex l'any de llancament de la cançó*★ *――――*★ *: ")
-            expresion = "^[0-9]{4}$"
-            comprobacio = re.search(expresion, anyllancament)
-            if comprobacio:
-                print("es correcte")
-            else:
+            #Marc: Responsable de la validació d'alta cançons
+            print("                         ♬ :;;;:♬  Canco 1 ♬ :;;;:♬")
+            canco_nova[0]=input("*★ *――――*★ *Introdueix el nombre de la canco*★ *――――*★ *: ")
+            canco_nova[1]=input("*★ *――――*★ *Introdueix l'autor de la canco*★ *――――*★ *: ")
+            canco_nova[2]=input("*★ *――――*★ *Introduiex l'any de llancament de la canco*★ *――――*★ *: ")
+            expresio = "^[0-9]{4}$"
+            comprovacio = re.search(expresio, canco_nova[2])
+            while not comprovacio:
                 print("es incorrecte")
-                anyllancament=input("*★ *――――*★ *Introduiex l'any de llancament de la cançó*★ *――――*★ *: ")
-                comprobacio = re.search(expresion, anyllancament)
-                if comprobacio:
-                    print("Es correcte")
-                else:
-                    print("Ja has fet els 2 intents")
-                    sys.exit()
-            estil=input("*★ *――――*★ *Introdueix l'estil de la cançó*★ *――――*★ *: ")
-
-            url = input("Introdueix l'enllac1: ")
-            expresion = "^https://"
-            comprobacio = re.search(expresion, url)
-            if comprobacio:
-                print("es correcte")
-            else:
+                canco_nova[2]=input("*★ *――――*★ *Introduiex l'any de llancament de la canco*★ *――――*★ *: ")
+                comprovacio = re.search(expresio, canco_nova[2])
+            print("es correcte")
+            canco_nova[3]=input("*★ *――――*★ *Introdueix l'estil de la canco*★ *――――*★ *: ")
+            canco_nova[4] = input("Introdueix l'enllac1: ")
+            expresio = "^https://"
+            comprovacio = re.search(expresio, canco_nova[4])
+            while not comprovacio:
                 print("es incorrecte")
-                url1 = input("Introdueix l'enllac2: ")
-                comprobacio = re.search(expresion, url1)
-                if comprobacio:
-                    print("Es correcte")
-                else:
-                    print("Ja has fet els 2 intents")
-                    sys.exit()
-                
-                
+                canco_nova[4] = input("Introdueix l'enllac2: ")
+                comprovacio = re.search(expresio, canco_nova[4])
+            print("es correcte")
+            cancons.append(list(canco_nova))               
 
-            print("                         ♬ :;;;:♬  Cançó 2 ♬ :;;;:♬"                                )
-            canco1=input("*★ *――――*★ *Introdueix el nombre de la cançó*★ *――――*★ *: ")
-            autor1=input("*★ *――――*★ *Introdueix l'autor de la cançó*★ *――――*★ *: ")
-            anyllancament1=input("*★ *――――*★ *Introduiex l'any de llancament de la cançó*★ *――――*★ *: ")
-            expresion = "^[0-9]{4}$"
-            comprobacio = re.search(expresion, anyllancament1)
-            if comprobacio:
-                print("es correcte")
-            else:
+            print("                         ♬ :;;;:♬  Canco 2 ♬ :;;;:♬"                                )
+            canco_nova[0]=input("*★ *――――*★ *Introdueix el nombre de la canco*★ *――――*★ *: ")
+            canco_nova[1]=input("*★ *――――*★ *Introdueix l'autor de la canco*★ *――――*★ *: ")
+            canco_nova[2]=input("*★ *――――*★ *Introduiex l'any de llancament de la canco*★ *――――*★ *: ")
+            expresio = "^[0-9]{4}$"
+            comprovacio = re.search(expresio, canco_nova[2])
+            while not comprovacio:
                 print("es incorrecte")
-                anyllancament1=input("*★ *――――*★ *Introduiex l'any de llancament de la cançó*★ *――――*★ *: ")
-                comprobacio = re.search(expresion, anyllancament1)
-                if comprobacio:
-                    print("Es correcte")
-                else:
-                    print("Ja has fet els 2 intents")
-                    sys.exit()
-
-            estil1=input("*★ *――――*★ *Introdueix l'estil de la cançó*★ *――――*★ *: ")
-
-            url3 = input("Introdueix l'enllac1: ")
-            expresion = "^https://"
-            comprobacio = re.search(expresion, url3)
-            if comprobacio:
-                print("es correcte")
-            else:
+                canco_nova[2]=input("*★ *――――*★ *Introduiex l'any de llancament de la canco*★ *――――*★ *: ")
+                comprovacio = re.search(expresio, canco_nova[2])
+            print("es correcte")
+            canco_nova[3]=input("*★ *――――*★ *Introdueix l'estil de la canco*★ *――――*★ *: ")
+            canco_nova[4] = input("Introdueix l'enllac1: ")
+            expresio = "^https://"
+            comprovacio = re.search(expresio, canco_nova[4])
+            while not comprovacio:
                 print("es incorrecte")
-                url4 = input("Introdueix l'enllac2: ")
-                comprobacio = re.search(expresion, url4)
-                if comprobacio:
-                    print("Es correcte")
-                else:
-                    print("Ja has fet els 2 intents")
-                    sys.exit()
+                canco_nova[4] = input("Introdueix l'enllac2: ")
+                comprovacio = re.search(expresio, canco_nova[4])
+            print("es correcte")
+            cancons.append(list(canco_nova))
                 
             
             
