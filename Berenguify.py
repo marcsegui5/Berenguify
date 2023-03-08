@@ -5,6 +5,7 @@ cancons = []
 usuaris = []
 canco_nova = ['', '', '', '', '']
 usuari_nou = ['', '', '', '']
+#Posam el while per que el menu  es mostri el nombre de pics que volguem
 while True:
     print("                    ⸻    ♫ Benvinguts a BERENGUIFY!!!♫ ⸻")
     print()
@@ -27,6 +28,7 @@ while True:
             canco_nova[2]=input("*★ *――――*★ *Introduiex l'any de llancament de la canco*★ *――――*★ *: ")
             expresio = "^[0-9]{4}$"
             comprovacio = re.search(expresio, canco_nova[2])
+            #El  while not fa  la mateixa tasca que l'elif
             while not comprovacio:
                 print("es incorrecte")
                 canco_nova[2]=input("*★ *――――*★ *Introduiex l'any de llancament de la canco*★ *――――*★ *: ")
@@ -41,9 +43,11 @@ while True:
                 canco_nova[4] = input("Introdueix l'enllac2: ")
                 comprovacio = re.search(expresio, canco_nova[4])
             print("es correcte")
+            #Amb l'append feim que es pugui afegir cançons a la llista
             cancons.append(list(canco_nova))              
     
         elif opcio==2:
+            #Amb l'usuari feim el mateix que amb les cançons, canviant l'enllaç i  l'any de llançament per el correu i la data de naixement
             print("                                ✦ Usuari 1✦")
             usuari_nou[0]=input("⇉ Escriu el teu nom i llinatge: ")   
             usuari_nou[1]=input("⇉ Escriu la teva data de naixement: ")
@@ -68,6 +72,7 @@ while True:
         elif opcio==3:
             #len torna la quantitat d'elements que hi ha de dins d'una llista
             print("En el sistema hi ha " + str(len(cancons)) + " cancons.")
+            #Feim un bucle
             i = 1
             for c in cancons:
                 print(" Per veure la ♬ :;;;:♬  Canco " + str(i) + " ♬ :;;;:♬: ")
@@ -95,7 +100,8 @@ while True:
                 print()
                 i+=1        
         
- elif opcio==5:
+        elif opcio==5:
             print("Gracies per emprar l'aplicacio, adeu!!")
             break
     except:
+         print("ERROR")
