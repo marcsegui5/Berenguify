@@ -1,5 +1,6 @@
 
 import re
+#Assignam les variables
 cancons = []
 usuaris = []
 canco_nova = ['', '', '', '', '']
