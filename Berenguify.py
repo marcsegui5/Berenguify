@@ -1,7 +1,5 @@
 
 import re
-
-opcio=1
 cancons = []
 usuaris = []
 canco_nova = ['', '', '', '', '']
